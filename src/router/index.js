@@ -8,6 +8,8 @@ import Comedies from "@/views/Comedies";
 import Sports from "@/views/Sports";
 import KidsEvents from "@/views/KidsEvents";
 import ItemDetails from "@/views/ItemDetails";
+import Search from "@/views/Search";
+import Cart from "@/views/Cart";
 
 Vue.use(VueRouter);
 
@@ -21,6 +23,11 @@ const routes = [
     path: "/about",
     name: "About",
     component: About,
+  },
+  {
+    path: "/search",
+    name: "Search",
+    component: Search,
   },
   {
     path: "/cities",
@@ -46,6 +53,11 @@ const routes = [
     path: "/kids/events",
     name: "KidsEvents",
     component: KidsEvents,
+  },
+  {
+    path: "/cart",
+    name: "Cart",
+    component: Cart,
   },
   {
     path: "/item/:id",

@@ -1,9 +1,34 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Navbar @searchEvent="searchEvent" />
     <router-view />
   </div>
 </template>
+
+<script>
+import Navbar from "@/components/Navbar";
+
+export default {
+  components: { Navbar },
+  computed: {
+    events() {
+      return this.$store.getters.getAllEvents.filter((event) => {
+        event.name.toLowerCase().includes(this.$store.state.searchWord) ||
+          event.location.toLowerCase().includes(this.$store.state.searchWord);
+      });
+    },
+  },
+  methods: {
+    searchEvent() {
+      return this.$store.getters.getAllEvents.filter((event) => {
+        event.name.toLowerCase().includes(this.$store.state.searchWord) ||
+          event.location.toLowerCase().includes(this.$store.state.searchWord);
+      });
+      // this.$store.dispatch("updateEventsList");
+    },
+  },
+};
+</script>
 
 <style>
 #app {
@@ -27,9 +52,3 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
-<script>
-import Navbar from "@/components/Navbar";
-export default {
-  components: { Navbar },
-};
-</script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ItemList :events="$store.state.events.sports" />
+    <ItemList :events="$store.state.sports" category="Sports" />
   </div>
 </template>
 

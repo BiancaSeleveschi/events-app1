@@ -1,8 +1,14 @@
 <template>
-  <div class="home">
-    <h1 class="mt-5 pt-5">LEADER IN TICKETING - YOUR GUIDE TO GOING OUT</h1>
+  <div>
+    <h1 class="mt-5 pt-5 title-search">SEARCH</h1>
+    <input
+      v-model="searchWord"
+      placeholder="Search"
+      type="text"
+      class="p-2 rounded rounded-2 m-auto input-search"
+    />
     <div class="events-section">
-      <div v-for="(event, index) in events" :key="index" class="item">
+      <div v-for="(event, index) in filteredEvents" :key="index" class="item">
         <router-link
           :to="{
             name: 'ItemDetails',
@@ -28,12 +34,27 @@
 <script>
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Home",
+  name: "Search",
   data() {
     return {
-      events: this.$store.getters.getAllEvents,
       searchWord: "",
     };
+  },
+  computed: {
+    filteredEvents() {
+      let events;
+      if (this.searchWord === "") {
+        events = this.$store.getters.getAllEvents;
+      } else {
+        events = this.$store.getters.getAllEvents.filter((event) => {
+          return (
+            event.name.toLowerCase().includes(this.searchWord.toLowerCase()) ||
+            event.location.toLowerCase().includes(this.searchWord.toLowerCase())
+          );
+        });
+      }
+      return events;
+    },
   },
 };
 </script>
@@ -45,7 +66,7 @@ export default {
   justify-content: center;
   height: fit-content;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 150px;
   padding-bottom: 300px;
 }
 
@@ -67,7 +88,12 @@ export default {
 .item:hover > .card > .card-image {
   transform: scale(1.1);
 }
-
+.title-search {
+  letter-spacing: 3px;
+  color: darkblue;
+  font-size: 50px;
+  font-family: "Sitka Subheading", sans-serif;
+}
 .card-bottom:hover > .card-image {
   transform: scale(1.1);
 }
@@ -97,5 +123,25 @@ export default {
 .item-title {
   font-size: 26px;
   font-weight: 700;
+}
+
+.input-search {
+  width: 100%;
+  max-width: 330px;
+  border: none;
+  outline: none;
+  background-color: rgba(175, 175, 166, 0.4);
+  border-radius: 16px;
+  border-bottom: 2px solid #c2c2c2;
+  font-size: 20px;
+  position: absolute;
+  display: grid;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.input-search:focus {
+  background-color: rgba(169, 164, 164, 0.5);
 }
 </style>
