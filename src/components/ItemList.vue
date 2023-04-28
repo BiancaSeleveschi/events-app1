@@ -1,5 +1,5 @@
 <template>
-  <div class="events-section d-block">
+  <div class="events-section d-block bg-dark bg-opacity-75">
     <h2
       class="text-bg-primary w-50 m-auto p-4 text-uppercase border border-bottom title"
     >
@@ -14,7 +14,7 @@
     <div
       v-for="(event, index) in events"
       :key="index"
-      class="cart-item w-50 m-auto bg-secondary bg-opacity-25"
+      class="cart-item w-50 m-auto bg-light"
     >
       <img :src="event.img" />
       <div>
@@ -91,7 +91,8 @@ export default {
   height: fit-content;
   width: 100%;
   padding-top: 100px;
-  padding-bottom: 300px;
+  padding-bottom: 35%;
+  margin-bottom: -35%;
 }
 
 .cart-item {

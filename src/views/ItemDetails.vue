@@ -112,7 +112,6 @@ export default {
 
 .event {
   display: flex;
-  position: absolute;
   justify-content: center;
   align-content: center;
   flex-direction: column;

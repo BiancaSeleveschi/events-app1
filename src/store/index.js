@@ -10,7 +10,7 @@ export default new Vuex.Store({
       {
         name: "Untold",
         location: "Cluj",
-        date: "July 7-10, 2023",
+        date: "2023-08-03",
         description:
           "One of the biggest music festivals in Europe, featuring world-renowned DJs and live acts.",
         img: "https://www.thedjrevolution.com/wp-content/uploads/elementor/thumbs/Romanias-UNTOLD-Festival-drops-massive-lineup-for-2021-edition-p99jpvrfd39hqjtx71s9u1qc5txkenlh73uxkh3mn2.jpg",
@@ -21,7 +21,7 @@ export default new Vuex.Store({
       {
         name: "Electric Castle",
         location: "Cluj",
-        date: "August 11-15, 2023",
+        date: "2023-08-05",
         description:
           "A festival that combines music, technology and alternative arts in a unique medieval castle setting.",
         img: "https://www.datocms-assets.com/43475/1657709341-287783925_5129942580453776_4847351174605689115_n.jpg?auto=format&fit=crop&h=530&w=940",
@@ -32,7 +32,7 @@ export default new Vuex.Store({
       {
         name: "ARTmania",
         location: "Sibiu",
-        date: "June 24-July 3, 2023",
+        date: "2023-11-20",
         description:
           "An international festival of visual and performing arts, featuring music, theater, exhibitions and workshops.",
         img: "https://yourope.org/wp-content/uploads/2017/03/Artmania-3.jpg",
@@ -43,7 +43,7 @@ export default new Vuex.Store({
       {
         name: "Sighisoara Medieval Festival",
         location: "Hunedoara",
-        date: "July",
+        date: "2023-06-23",
         description:
           "A festival that celebrates the medieval history and traditions of the city, featuring reenactments, parades, concerts and crafts.",
         img: "https://romaniatourstore.com/wp-content/uploads/2017/02/Sighisoara-Medieval-Festival-1024x768.jpg",
@@ -54,7 +54,7 @@ export default new Vuex.Store({
       {
         name: "George Enescu International Festival",
         location: "Bucharest",
-        date: "August 5-6, 2023",
+        date: "2023-06-20",
         description:
           "A classical music festival that honors the legacy of the Romanian composer George Enescu, featuring world-class orchestras and soloists.",
         img: "https://cdn.romania-insider.com/sites/default/files/styles/article_large_image/public/2019-09/ok_enescu_festival_opening_copyright_ampt_small.jpg",
@@ -65,7 +65,7 @@ export default new Vuex.Store({
       {
         name: "Sunwaves Festival",
         location: "Tulcea",
-        date: "August 11-15, 2023",
+        date: "2023-09-05",
         description:
           "A festival that combines music, technology and alternative arts in a unique beach setting.",
         img: "https://sunwaves-fest.ro/wp-content/uploads/2021/05/sunwaves-festival-13.jpg",
@@ -76,7 +76,7 @@ export default new Vuex.Store({
       {
         name: "Jazz in the Park",
         location: "Cluj",
-        date: "June 24-July 3, 2023",
+        date: "2023-09-0523",
         description:
           "A festival that celebrates jazz music in a beautiful park setting.",
         img: "https://www.jazzinthepark.ro/wp-content/uploads/2021/03/JazzInThePark_ArticolAlinVaida3_Cover.jpg",
@@ -87,7 +87,7 @@ export default new Vuex.Store({
       {
         name: "Sunwaves Festival",
         location: "Constanța",
-        date: "August 11-15, 2023",
+        date: "2023-09-05",
         description:
           "A festival that combines music, technology and alternative arts in a unique beach setting.",
         img: "https://pbs.twimg.com/media/FLWBMYzXIAIjDXf.jpg:large",
@@ -98,7 +98,7 @@ export default new Vuex.Store({
       {
         name: "Jazz in the Park",
         location: "Suceava",
-        date: "June 24-July 3, 2023",
+        date: "2023-09-0523",
         description:
           "A festival that celebrates jazz music in a beautiful park setting.",
         img: "https://zcj.ro/images/db/1_3_244405_1677136210_06289_fav.jpg",
@@ -108,7 +108,7 @@ export default new Vuex.Store({
       },
       {
         name: "Cluj-Napoca Marathon",
-        date: "May 15, 2023",
+        date: "2023-06-20",
         location: "Cluj",
         description:
           "A popular marathon held annually in Cluj-Napoca, with thousands of participants from all over the world.",
@@ -119,7 +119,7 @@ export default new Vuex.Store({
       },
       {
         name: "National Triathlon Championship",
-        date: "July 23-24, 2023",
+        date: "2023-06-20",
         location: "Bucharest",
         description:
           "The top triathletes from across Romania compete for the national championship title in this exciting two-day event.",
@@ -130,7 +130,7 @@ export default new Vuex.Store({
       },
       {
         name: "National Triathlon Championship",
-        date: "July 23-24, 2023",
+        date: "2023-07-20",
         location: "Botoșani",
         description:
           "The top triathletes from across Romania compete for the national championship title in this exciting two-day event.",
@@ -141,7 +141,7 @@ export default new Vuex.Store({
       },
       {
         name: "Mountain Biking Cup",
-        date: "September 2-3, 2023",
+        date: "2023-09-22",
         location: "Brașov",
         description:
           "A thrilling mountain biking competition in the beautiful mountains of Poiana Brașov, with professional and amateur categories.",
@@ -152,7 +152,7 @@ export default new Vuex.Store({
       },
       {
         name: "Romanian Open Tennis Tournament",
-        date: "October 10-16, 2023",
+        date: "2023-09-24",
         location: "Bucharest",
         description:
           "One of the top tennis tournaments in Romania, featuring some of the world's best tennis players and rising stars.",
@@ -163,7 +163,7 @@ export default new Vuex.Store({
       },
       {
         name: "National Beach Volleyball Championship",
-        date: "August 19-20, 2023",
+        date: "2023-09-05",
         location: "Constanța",
         description:
           "The top beach volleyball players from across Romania compete for the national championship title in this exciting two-day event.",
@@ -174,7 +174,7 @@ export default new Vuex.Store({
       },
       {
         name: "National Beach Volleyball Championship",
-        date: "August 19-20, 2023",
+        date: "2023-08-05",
         location: "Mureş",
         description:
           "The top beach volleyball players from across Romania compete for the national championship title in this exciting two-day event.",
@@ -185,7 +185,7 @@ export default new Vuex.Store({
       },
       {
         name: "Stand-up Comedy Night",
-        date: "2023-05-12",
+        date: "2023-06-20",
         location: "Bucharest",
         category: "comedies",
         id: uuid(),

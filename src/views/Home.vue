@@ -1,6 +1,8 @@
 <template>
-  <div class="home">
-    <h1 class="mt-5 pt-5">LEADER IN TICKETING - YOUR GUIDE TO GOING OUT</h1>
+  <div class="home bg-dark">
+    <h1 class="pt-5 text-light">
+      LEADER IN TICKETING - YOUR GUIDE TO GOING OUT
+    </h1>
     <div class="events-section">
       <div v-for="(event, index) in filteredEvents" :key="index" class="item">
         <router-link
