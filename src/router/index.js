@@ -1,15 +1,15 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import About from "../views/About.vue";
-import Cities from "@/views/Cities";
 import Festivals from "@/views/Festivals";
 import Comedies from "@/views/Comedies";
 import Sports from "@/views/Sports";
 import KidsEvents from "@/views/KidsEvents";
 import ItemDetails from "@/views/ItemDetails";
 import Search from "@/views/Search";
-import Cart from "@/views/Cart";
+import CardDetails from "@/views/CardDetails";
+import Checkout from "@/views/Checkout";
+import CityEvents from "@/views/CityEvents";
 
 Vue.use(VueRouter);
 
@@ -20,19 +20,9 @@ const routes = [
     component: Home,
   },
   {
-    path: "/about",
-    name: "About",
-    component: About,
-  },
-  {
     path: "/search",
     name: "Search",
     component: Search,
-  },
-  {
-    path: "/cities",
-    name: "Cities",
-    component: Cities,
   },
   {
     path: "/festivals",
@@ -55,9 +45,20 @@ const routes = [
     component: KidsEvents,
   },
   {
-    path: "/cart",
-    name: "Cart",
-    component: Cart,
+    path: "/checkout",
+    name: "Checkout",
+    component: Checkout,
+  },
+  {
+    path: "/card",
+    name: "CardDetails",
+    component: CardDetails,
+  },
+  {
+    path: "/city/events/:city",
+    name: "CityEvents",
+    component: CityEvents,
+    props: true,
   },
   {
     path: "/item/:id",

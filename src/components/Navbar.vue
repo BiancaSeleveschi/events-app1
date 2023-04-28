@@ -1,8 +1,8 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-secondary bg-opacity-25">
       <div class="container-fluid">
-        <h1 class="navbar-brand fw-bold me-5">Events</h1>
+        <h1 class="navbar-brand fw-bold me-5">EventGo</h1>
         <button
           class="navbar-toggler"
           type="button"
@@ -30,11 +30,19 @@
               </p>
               <div class="cities-div" v-show="showCities">
                 <div
-                  v-for="(city, index) in $store.state.cities"
+                  @click="showCities = false"
+                  v-for="(city, index) in cities"
                   :key="index"
                   class="city-name d-block px-3 pt-3 w-25"
                 >
-                  {{ city }}
+                  <router-link
+                    :to="{
+                      name: 'CityEvents',
+                      params: { city: city },
+                    }"
+                    class="text-decoration-none"
+                    >{{ city }}
+                  </router-link>
                 </div>
               </div>
             </li>
@@ -45,8 +53,8 @@
             </li>
             <li class="nav-item">
               <router-link to="/comedies" class="nav-link"
-                >Comedies</router-link
-              >
+                >Comedies
+              </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/sports" class="nav-link">Sports</router-link>
@@ -57,7 +65,18 @@
               </router-link>
             </li>
           </ul>
-          <router-link to="/cart" class="cart rounded-5 mx-2">
+
+          <form class="d-flex" role="search">
+            <input
+              v-model="searchWord"
+              @input="filterEvents"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+          <router-link to="/checkout" class="cart rounded-5 mx-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -71,18 +90,6 @@
               />
             </svg>
           </router-link>
-          <router-link to="/search" class="search-box rounded-5 me-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              class="bi bi-search text-dark"
-            >
-              <path
-                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-              />
-            </svg>
-          </router-link>
         </div>
       </div>
     </nav>
@@ -90,6 +97,8 @@
 </template>
 
 <script>
+import { EventBus } from "@/store";
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Navbar",
@@ -99,19 +108,57 @@ export default {
       searchWord: "",
       showCities: false,
       showCartDetails: false,
+      cities: [
+        "Alba",
+        "Arad",
+        "Arges",
+        "Bacău",
+        "Bihor",
+        "Bistriţa-Năsăud",
+        "Botoșani",
+        "Brăila",
+        "Brașov",
+        "Bucharest",
+        "Buzău",
+        "Caraş-Severin",
+        "Călărași",
+        "Cluj",
+        "Constanța",
+        "Covasna",
+        "Dâmboviţa",
+        "Dolj",
+        "Galaţi",
+        "Giurgiu",
+        "Gorj",
+        "Harghita",
+        "Hunedoara",
+        "Iași",
+        "Ialomiţa",
+        "Ilfov",
+        "Maramureş",
+        "Mehedinţi",
+        "Mureş",
+        "Neamţ",
+        "Olt",
+        "Prahova",
+        "Satu Mare",
+        "Sălaj",
+        "Sibiu",
+        "Suceava",
+        "Suceava",
+        "Teleorman",
+        "Timiş",
+        "Tulcea",
+        "Vaslui",
+        "Vâlcea",
+        "Vrancea",
+      ],
     };
   },
   methods: {
-    searchEvent(searchWord) {
-      // this.$emit("search", searchWord);
-      if (searchWord !== "") {
-        this.$router.push("/search");
-      }
-    },
-    showCart() {
-      this.showCartDetails = !this.showCartDetails;
-      this.showLogin = false;
-      this.showProfile = false;
+    filterEvents() {
+      this.$router.push("/search");
+      EventBus.$emit("search-query", this.searchWord);
     },
   },
 };
@@ -136,9 +183,9 @@ export default {
 .cities-div:after {
   content: "";
   position: fixed;
-  height: 0px;
-  width: 0px;
-  left: 245px;
+  height: 0;
+  width: 0;
+  left: 270px;
   top: 60px;
   border-width: 15px;
   border-color: transparent #000000 transparent transparent;
@@ -165,7 +212,7 @@ export default {
 .navbar-brand {
   font-size: 30px;
 }
-.search-box,
+
 .cart {
   float: right;
   padding: 8px;

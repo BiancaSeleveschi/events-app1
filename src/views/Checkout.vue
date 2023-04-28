@@ -1,12 +1,13 @@
 <template>
   <div>
     <div class="card">
-      <h4 class="border-bottom p-2">My order</h4>
+      <h4 class="border-bottom p-2 mx-2">My order</h4>
       <div
         v-for="(item, index) in this.$store.state.cart"
         :key="index"
-        class="border border-1 rounded-4 p-2 mb-2"
+        class="border border-1 rounded-4 p-2 mb-2 bg-secondary bg-opacity-10"
       >
+        <p @click="removeEventFromCart(index)" class="close me-1">x</p>
         <h5 class="fw-bold mt-2">{{ item.event.name }}</h5>
         <p>{{ item.event.location }}, {{ item.event.date }}</p>
         <div class="w-100">
@@ -24,35 +25,47 @@
         <p class="d-inline">Total:</p>
         <p class="d-inline price">{{ item.quantityPrice }} RON</p>
       </div>
-      <div class="p-2">
+      <div class="p-3">
+        <p>Add coupon code</p>
         <input
           v-model="couponCode"
           placeholder="Coupon Code"
-          class="d-inline w-50 me-4 p-2"
+          class="d-inline w-50 me-4 py-2"
           id="couponCode"
         />
         <button
           class="btn btn-outline-dark d-inline w-25"
-          @click="applyCouponCode"
+          @click="!isCouponCodeApplied ? applyCouponCode() : removeCouponCode()"
         >
-          Apply
+          {{ !isCouponCodeApplied ? "Apply" : "Remove" }}
         </button>
+        <p v-show="showCouponCodeAlert" class="text-danger ms-2">
+          Enter a valid coupon code
+        </p>
       </div>
-      <p
-        v-show="showCouponCodeAlert"
-        class="text-danger ms-2"
-        id="coupon-code-alert"
-      >
-        Enter a valid coupon code
-      </p>
-      <h5 class="fw-bold mx-2 mt-2 p-2 border-bottom border-top">
+      <h5 class="fw-bold mx-3 my-4 py-2 border-bottom border-top">
         Total:
         <span class="price"> {{ totalPrice }} RON</span>
       </h5>
-      <button class="btn btn-dark w-50 my-3 m-auto">Pay Now</button>
     </div>
-    <div class="d-inline-block email-card">
-      <p>sssssssssss</p>
+    <div class="d-inline-block email-card px-4">
+      <h5 class="py-2 border-bottom">You'll receive the tickets via email.</h5>
+      <p class="pt-3">Enter your email</p>
+      <input
+        v-model="email"
+        placeholder="Email"
+        class="p-1 w-75"
+        id="email-input"
+      />
+      <p v-show="isEmailInvalid" class="text-danger">
+        {{ messageEmailAlert }}
+      </p>
+      <button
+        class="btn btn-dark w-50 my-4 d-block m-auto"
+        @click="verifyEmail"
+      >
+        Continue
+      </button>
     </div>
   </div>
 </template>
@@ -60,13 +73,17 @@
 <script>
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Cart",
+  name: "Checkout",
   data() {
     return {
       couponCode: "",
+      email: "",
+      messageEmailAlert: "",
       couponCodeName: "EXTRA10",
       showCouponCodeAlert: false,
       isCouponCodeValid: false,
+      isCouponCodeApplied: false,
+      isEmailInvalid: false,
     };
   },
   computed: {
@@ -89,6 +106,27 @@ export default {
       } else {
         this.isCouponCodeValid = true;
       }
+      this.isCouponCodeApplied = true;
+    },
+    removeCouponCode() {
+      if (this.isCouponCodeApplied) {
+        this.couponCode = "";
+      }
+      this.isCouponCodeApplied = false;
+    },
+    removeEventFromCart(index) {
+      this.$store.dispatch("removeEventFromCart", index);
+    },
+    verifyEmail() {
+      if (this.email === "") {
+        this.isEmailInvalid = true;
+        this.messageEmailAlert = "Enter a email address";
+      } else if (!this.email.includes("@") && this.email !== "") {
+        this.isEmailInvalid = true;
+        this.messageEmailAlert = "Enter a valid email address";
+      } else if (this.email.includes("@")) {
+        this.$router.push("/card");
+      }
     },
   },
 };
@@ -100,22 +138,26 @@ export default {
   border-bottom: 1px solid black;
   outline: none;
 }
-#coupon-code-alert {
-  margin-top: -6px;
+
+#email-input {
+  outline: none;
+  margin-top: -10px;
 }
+
 .card {
   border: 1px solid black;
   float: left;
-  width: 500px;
+  width: 25%;
   text-align: left;
   padding: 10px;
   margin-left: 20%;
   margin-top: 7%;
   margin-bottom: 10%;
 }
+
 .email-card {
   border: 1px solid black;
-  width: 500px;
+  width: 30%;
   text-align: left;
   padding: 10px;
   margin-right: 20%;
@@ -123,6 +165,14 @@ export default {
   margin-bottom: 10%;
   border-radius: 5px;
 }
+
+.close {
+  float: right;
+  margin-top: -10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
 .price {
   float: right;
 }

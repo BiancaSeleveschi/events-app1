@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ItemList :events="events" :category="category" />
+    <ItemList :events="filteredEvents" category="Events" />
   </div>
 </template>
 
@@ -8,18 +8,22 @@
 import ItemList from "@/components/ItemList";
 
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "Comedy",
+  name: "CityEvents",
   components: { ItemList },
+  props: ["city"],
   data() {
     return {
-      category: "comedies",
+      cityInitial: this.city,
+      // city: this.$route.params.city,
     };
   },
+  mounted() {
+    console.log(this.cityInitial);
+  },
   computed: {
-    events() {
+    filteredEvents() {
       return this.$store.state.events.filter(
-        (event) => event.category === this.category
+        (event) => event.location === this.city
       );
     },
   },

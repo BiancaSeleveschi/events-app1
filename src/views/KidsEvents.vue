@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ItemList :events="$store.state.kidsEvents" category="Kids Events" />
+    <ItemList :events="events" category="Kids Events" />
   </div>
 </template>
 
@@ -9,6 +9,13 @@ import ItemList from "@/components/ItemList";
 export default {
   name: "KidsEvents",
   components: { ItemList },
+  computed: {
+    events() {
+      return this.$store.state.events.filter(
+        (event) => event.category === "kids"
+      );
+    },
+  },
 };
 </script>
 

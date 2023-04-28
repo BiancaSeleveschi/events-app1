@@ -2,7 +2,7 @@
   <div class="home">
     <h1 class="mt-5 pt-5">LEADER IN TICKETING - YOUR GUIDE TO GOING OUT</h1>
     <div class="events-section">
-      <div v-for="(event, index) in events" :key="index" class="item">
+      <div v-for="(event, index) in filteredEvents" :key="index" class="item">
         <router-link
           :to="{
             name: 'ItemDetails',
@@ -22,18 +22,37 @@
         </router-link>
       </div>
     </div>
+    <ItemList :events="events" />
   </div>
 </template>
 
 <script>
+import { EventBus } from "@/store";
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Home",
   data() {
     return {
-      events: this.$store.getters.getAllEvents,
+      events: this.$store.state.events,
       searchWord: "",
     };
+  },
+  created: function () {
+    EventBus.$on("search-query", (query) => {
+      this.searchWord = query;
+    });
+  },
+  computed: {
+    filteredEvents() {
+      if (this.searchWord.trim() !== "") {
+        return this.events.filter((event) =>
+          event.name.toLowerCase().includes(this.searchWord.toLowerCase())
+        );
+      } else {
+        return this.events;
+      }
+    },
   },
 };
 </script>
@@ -64,6 +83,7 @@ export default {
   background-color: rgba(0, 0, 0);
   text-decoration: none;
 }
+
 .item:hover > .card > .card-image {
   transform: scale(1.1);
 }

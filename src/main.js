@@ -5,7 +5,6 @@ import store from "./store";
 import "bootstrap/dist/css/bootstrap.css";
 
 Vue.config.productionTip = false;
-
 new Vue({
   router,
   store,

@@ -90,7 +90,7 @@ export default {
         quantityPrice: event.price * this.quantity,
       };
       this.$store.dispatch("addToCart", item);
-      this.$router.push("/cart");
+      this.$router.push("/checkout");
     },
     increaseQuantity() {
       this.quantity++;
@@ -144,14 +144,11 @@ export default {
 }
 
 .item-event-title {
-  display: flex;
-  position: relative;
-  text-align: start;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Clab Personal Use", sans-serif;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.034);
+  cursor: pointer;
   transition: 0.5s;
 }
 
