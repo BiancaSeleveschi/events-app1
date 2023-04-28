@@ -1,5 +1,5 @@
 <template>
-  <div class="event-details-page mt-5">
+  <div class="mt-5">
     <div v-if="event" class="event">
       <div class="mt-5 pt-5 w-50 m-auto cart-item bg-secondary bg-opacity-25">
         <img :src="event.img" class="img" />
@@ -118,11 +118,6 @@ export default {
   width: 100%;
   height: 100%;
   padding-bottom: 300px;
-}
-
-.event-details-page {
-  margin-bottom: 969px;
-  z-index: 1;
 }
 
 .img {

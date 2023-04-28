@@ -1,7 +1,7 @@
 <template>
   <div class="events-section d-block bg-dark bg-opacity-75">
     <h2
-      class="text-bg-primary w-50 m-auto p-4 text-uppercase border border-bottom title"
+      class="text-bg-primary w-50 m-auto p-4 text-uppercase border-bottom title"
     >
       {{ category }}
     </h2>

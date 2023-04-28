@@ -35,12 +35,12 @@
         />
         <button
           class="btn btn-outline-dark d-inline w-25"
-          @click="!isCouponCodeApplied ? applyCouponCode() : removeCouponCode()"
+          @click="applyCouponCode"
         >
-          {{ !isCouponCodeApplied ? "Apply" : "Remove" }}
+          Apply
         </button>
-        <p v-show="showCouponCodeAlert" class="text-danger ms-2">
-          Enter a valid coupon code
+        <p v-show="showCouponCodeAlert" class="text-danger">
+          {{ messageCouponCodeAlert }}
         </p>
       </div>
       <h5 class="fw-bold mx-3 my-4 py-2 border-bottom border-top">
@@ -79,6 +79,7 @@ export default {
       couponCode: "",
       email: "",
       messageEmailAlert: "",
+      messageCouponCodeAlert: "",
       couponCodeName: "EXTRA10",
       showCouponCodeAlert: false,
       isCouponCodeValid: false,
@@ -100,19 +101,24 @@ export default {
   },
   methods: {
     applyCouponCode() {
-      if (this.couponCode.toLowerCase() !== this.couponCodeName.toLowerCase()) {
+      if (
+        this.$store.state.cart.length === 0 &&
+        this.isCouponCodeValid !== ""
+      ) {
         this.showCouponCodeAlert = true;
-        this.isCouponCodeValid = false;
-      } else {
-        this.isCouponCodeValid = true;
+        this.messageCouponCodeAlert = "You don't have any ticket added";
+      } else if (this.$store.state.cart.length !== 0) {
+        if (
+          this.couponCode.toLowerCase() !== this.couponCodeName.toLowerCase()
+        ) {
+          this.showCouponCodeAlert = true;
+          this.isCouponCodeValid = false;
+          this.messageCouponCodeAlert = "Enter a valid coupon code";
+        } else {
+          this.isCouponCodeValid = true;
+          this.showCouponCodeAlert = false;
+        }
       }
-      this.isCouponCodeApplied = true;
-    },
-    removeCouponCode() {
-      if (this.isCouponCodeApplied) {
-        this.couponCode = "";
-      }
-      this.isCouponCodeApplied = false;
     },
     removeEventFromCart(index) {
       this.$store.dispatch("removeEventFromCart", index);

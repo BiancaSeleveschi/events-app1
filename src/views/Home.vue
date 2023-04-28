@@ -1,6 +1,6 @@
 <template>
-  <div class="home bg-dark">
-    <h1 class="pt-5 text-light">
+  <div class="bg-dark">
+    <h1 class="text-light title">
       LEADER IN TICKETING - YOUR GUIDE TO GOING OUT
     </h1>
     <div class="events-section">
@@ -69,7 +69,9 @@ export default {
   padding-top: 100px;
   padding-bottom: 300px;
 }
-
+.title {
+  padding-top: 5%;
+}
 .card {
   display: flex;
   flex-direction: column;

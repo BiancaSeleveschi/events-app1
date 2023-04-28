@@ -177,7 +177,6 @@ export default {
   z-index: 2;
   overflow: auto;
   background-color: white;
-  border: 1px solid black;
 }
 
 .cities-div:after {
@@ -186,9 +185,9 @@ export default {
   height: 0;
   width: 0;
   left: 270px;
-  top: 60px;
+  top: 62px;
   border-width: 15px;
-  border-color: transparent #000000 transparent transparent;
+  border-color: transparent #ffffff transparent transparent;
   border-style: solid;
   transform: rotate(90deg);
   z-index: 1;

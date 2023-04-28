@@ -8,6 +8,50 @@ export default new Vuex.Store({
   state: {
     events: [
       {
+        name: "Sunwaves Festival",
+        location: "Tulcea",
+        date: "2023-09-05",
+        description:
+          "A festival that combines music, technology and alternative arts in a unique beach setting.",
+        img: "https://sunwaves-fest.ro/wp-content/uploads/2021/05/sunwaves-festival-13.jpg",
+        price: 80,
+        id: uuid(),
+        category: "festivals",
+      },
+      {
+        name: "Jazz in the Park",
+        location: "Cluj",
+        date: "2023-09-0523",
+        description:
+          "A festival that celebrates jazz music in a beautiful park setting.",
+        img: "https://www.jazzinthepark.ro/wp-content/uploads/2021/03/JazzInThePark_ArticolAlinVaida3_Cover.jpg",
+        price: 40,
+        id: uuid(),
+        category: "festivals",
+      },
+      {
+        name: "Sunwaves Festival",
+        location: "Constanța",
+        date: "2023-09-05",
+        description:
+          "A festival that combines music, technology and alternative arts in a unique beach setting.",
+        img: "https://pbs.twimg.com/media/FLWBMYzXIAIjDXf.jpg:large",
+        price: 80,
+        id: uuid(),
+        category: "festivals",
+      },
+      {
+        name: "Jazz in the Park",
+        location: "Suceava",
+        date: "2023-09-0523",
+        description:
+          "A festival that celebrates jazz music in a beautiful park setting.",
+        img: "https://zcj.ro/images/db/1_3_244405_1677136210_06289_fav.jpg",
+        price: 40,
+        id: uuid(),
+        category: "festivals",
+      },
+      {
         name: "Untold",
         location: "Cluj",
         date: "2023-08-03",
@@ -63,61 +107,6 @@ export default new Vuex.Store({
         category: "festivals",
       },
       {
-        name: "Sunwaves Festival",
-        location: "Tulcea",
-        date: "2023-09-05",
-        description:
-          "A festival that combines music, technology and alternative arts in a unique beach setting.",
-        img: "https://sunwaves-fest.ro/wp-content/uploads/2021/05/sunwaves-festival-13.jpg",
-        price: 80,
-        id: uuid(),
-        category: "festivals",
-      },
-      {
-        name: "Jazz in the Park",
-        location: "Cluj",
-        date: "2023-09-0523",
-        description:
-          "A festival that celebrates jazz music in a beautiful park setting.",
-        img: "https://www.jazzinthepark.ro/wp-content/uploads/2021/03/JazzInThePark_ArticolAlinVaida3_Cover.jpg",
-        price: 40,
-        id: uuid(),
-        category: "festivals",
-      },
-      {
-        name: "Sunwaves Festival",
-        location: "Constanța",
-        date: "2023-09-05",
-        description:
-          "A festival that combines music, technology and alternative arts in a unique beach setting.",
-        img: "https://pbs.twimg.com/media/FLWBMYzXIAIjDXf.jpg:large",
-        price: 80,
-        id: uuid(),
-        category: "festivals",
-      },
-      {
-        name: "Jazz in the Park",
-        location: "Suceava",
-        date: "2023-09-0523",
-        description:
-          "A festival that celebrates jazz music in a beautiful park setting.",
-        img: "https://zcj.ro/images/db/1_3_244405_1677136210_06289_fav.jpg",
-        price: 40,
-        id: uuid(),
-        category: "festivals",
-      },
-      {
-        name: "Cluj-Napoca Marathon",
-        date: "2023-06-20",
-        location: "Cluj",
-        description:
-          "A popular marathon held annually in Cluj-Napoca, with thousands of participants from all over the world.",
-        img: "https://i0.wp.com/maraton-cluj.ro/wp-content/uploads/2017/08/CLUJ.jpg?fit=1600%2C724&ssl=1",
-        id: uuid(),
-        price: 50,
-        category: "sports",
-      },
-      {
         name: "National Triathlon Championship",
         date: "2023-06-20",
         location: "Bucharest",
@@ -137,6 +126,17 @@ export default new Vuex.Store({
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx4RETggFEma6TNiBsVm8LYLfYyMnus9NAK8kylxt3SL-KzNg2fZuc7_t0Pvk4TADs0b0&usqp=CAU",
         id: uuid(),
         price: 75,
+        category: "sports",
+      },
+      {
+        name: "Cluj-Napoca Marathon",
+        date: "2023-06-20",
+        location: "Cluj",
+        description:
+          "A popular marathon held annually in Cluj-Napoca, with thousands of participants from all over the world.",
+        img: "https://i0.wp.com/maraton-cluj.ro/wp-content/uploads/2017/08/CLUJ.jpg?fit=1600%2C724&ssl=1",
+        id: uuid(),
+        price: 50,
         category: "sports",
       },
       {
