@@ -69,9 +69,11 @@ export default {
   padding-top: 100px;
   padding-bottom: 300px;
 }
+
 .title {
   padding-top: 5%;
 }
+
 .card {
   display: flex;
   flex-direction: column;

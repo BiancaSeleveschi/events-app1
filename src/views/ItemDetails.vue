@@ -4,7 +4,7 @@
       <div class="mt-5 pt-5 w-50 m-auto cart-item bg-secondary bg-opacity-25">
         <img :src="event.img" class="img" />
         <div class="ms-5">
-          <h3 class="item-event-title fw-bold">{{ event.name }}</h3>
+          <h3 class="item-event-title text-black">{{ event.name }}</h3>
           <p class="pgf fw-bold mt-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -138,12 +138,9 @@ export default {
 }
 
 .item-event-title {
-  color: black;
+  text-align: start;
   text-decoration: none;
   text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.034);
-  cursor: pointer;
-  transition: 0.5s;
 }
 
 .button-right,
@@ -175,19 +172,5 @@ export default {
 
 .pgf {
   text-align: left;
-}
-
-.item-event-title:hover {
-  color: #838383;
-}
-
-.item-event-title {
-  display: flex;
-  position: relative;
-  text-align: start;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.034);
-  transition: 0.5s;
 }
 </style>

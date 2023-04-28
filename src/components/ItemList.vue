@@ -1,13 +1,11 @@
 <template>
   <div class="events-section d-block bg-dark bg-opacity-75">
-    <h2
-      class="text-bg-primary w-50 m-auto p-4 text-uppercase border-bottom title"
-    >
+    <h2 class="text-bg-primary w-50 m-auto p-4 text-uppercase title">
       {{ category }}
     </h2>
     <h4
       v-show="events.length === 0"
-      class="py-3 mt-5 px-3 w-50 m-auto title text-black"
+      class="py-3 mt-5 px-3 w-50 m-auto text-black title"
     >
       Sorry, we couldn't find any results for the entered search.
     </h4>
@@ -66,13 +64,13 @@ export default {
   transition: 0.5s;
 }
 
+.item-event-title:hover {
+  color: #838383;
+}
+
 .pgf,
 .title {
   text-align: left;
-}
-
-.item-event-title:hover {
-  color: #838383;
 }
 
 .title {
