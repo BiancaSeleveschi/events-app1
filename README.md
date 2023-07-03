@@ -8,6 +8,8 @@ One of the app's standout features is its seamless ticket-purchasing system. Use
 To develop this app, I utilized Vue.js as the framework, along with Bootstrap for responsive and intuitive design. Vuex was used for state management, enabling efficient data handling and providing a seamless user experience.
 
 By combining the power of Vue.js, Bootstrap, and Vuex, the app delivers a visually appealing, user-friendly interface that simplifies event discovery and ticket purchasing. 
+
+Demo: https://eventgo-app.netlify.app/
 ## Project setup
 ```
 npm install
