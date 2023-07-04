@@ -20,11 +20,11 @@ export default new Vuex.Store({
       },
       {
         name: "Jazz in the Park",
-        location: "Cluj",
+        location: "Cluj-Napoca",
         date: "2023-09-0523",
         description:
           "A festival that celebrates jazz music in a beautiful park setting.",
-        img: "https://www.jazzinthepark.ro/wp-content/uploads/2021/03/JazzInThePark_ArticolAlinVaida3_Cover.jpg",
+        img: "https://media.szekelyhon.ro/pictures/kronika_2021/05_majus2/b_facebook_jazz_in_the_park_skd.jpg",
         price: 40,
         id: uuid(),
         category: "festivals",
@@ -53,7 +53,7 @@ export default new Vuex.Store({
       },
       {
         name: "Untold",
-        location: "Cluj",
+        location: "Cluj-Napoca",
         date: "2023-08-03",
         description:
           "One of the biggest music festivals in Europe, featuring world-renowned DJs and live acts.",
@@ -64,7 +64,7 @@ export default new Vuex.Store({
       },
       {
         name: "Electric Castle",
-        location: "Cluj",
+        location: "Cluj-Napoca",
         date: "2023-08-05",
         description:
           "A festival that combines music, technology and alternative arts in a unique medieval castle setting.",
@@ -86,7 +86,7 @@ export default new Vuex.Store({
       },
       {
         name: "Sighisoara Medieval Festival",
-        location: "Hunedoara",
+        location: "Deva",
         date: "2023-06-23",
         description:
           "A festival that celebrates the medieval history and traditions of the city, featuring reenactments, parades, concerts and crafts.",
@@ -131,7 +131,7 @@ export default new Vuex.Store({
       {
         name: "Cluj-Napoca Marathon",
         date: "2023-06-20",
-        location: "Cluj",
+        location: "Cluj-Napoca",
         description:
           "A popular marathon held annually in Cluj-Napoca, with thousands of participants from all over the world.",
         img: "https://i0.wp.com/maraton-cluj.ro/wp-content/uploads/2017/08/CLUJ.jpg?fit=1600%2C724&ssl=1",
@@ -175,7 +175,7 @@ export default new Vuex.Store({
       {
         name: "National Beach Volleyball Championship",
         date: "2023-08-05",
-        location: "Mureş",
+        location: "Târgu Mureș",
         description:
           "The top beach volleyball players from across Romania compete for the national championship title in this exciting two-day event.",
         img: "https://www.masslive.com/resizer/ej4P0urCBzUjMjFLSJSDUPX85NU=/arc-anglerfish-arc2-prod-advancelocal/public/HZKVGN5SMNDUVBIUN4RJAB3UCM.jpg",
@@ -197,7 +197,7 @@ export default new Vuex.Store({
       {
         name: "Improvisational Comedy Show",
         date: "2023-06-20",
-        location: "Cluj",
+        location: "Cluj-Napoca",
         category: "comedies",
         description:
           "Get ready to be entertained and laugh out loud with our stand-up comedy event.",
@@ -219,7 +219,7 @@ export default new Vuex.Store({
       {
         name: "Comedy Gala",
         date: "2023-09-15",
-        location: "Dolj",
+        location: "Craiova",
         category: "comedies",
         description:
           "Join us for a night of laughter at our stand-up comedy show! Our lineup features some of the funniest comedians in the city. ",
@@ -230,7 +230,7 @@ export default new Vuex.Store({
       {
         name: "Improvisational Comedy Show",
         date: "2023-06-20",
-        location: "Caraş-Severin",
+        location: "Caransebeș",
         category: "comedies",
         description:
           "Stand-up comedy is a form of entertainment where a comedian performs in front of a live audience.",
@@ -241,7 +241,7 @@ export default new Vuex.Store({
       {
         name: "Stand-up Comedy Night",
         date: "2023-05-12",
-        location: "Maramureş",
+        location: "Baia Mare",
         category: "comedies",
         description:
           "Join us for a night of side-splitting humor and good times at our stand-up show.",
@@ -252,7 +252,7 @@ export default new Vuex.Store({
       {
         name: "Stand-up Comedy Night",
         date: "2023-06-12",
-        location: "Mureş",
+        location: "Târgu Mureș",
         category: "comedies",
         description:
           "Join us for a night of laughter at our stand-up comedy show! Our lineup features some of the funniest comedians in the city. ",
@@ -307,7 +307,7 @@ export default new Vuex.Store({
       {
         name: "Roast Battle",
         date: "2023-07-05",
-        location: "Timiș",
+        location: "Timișoara",
         description:
           "Comedy fans unite! Our stand-up show is the perfect way to have a good time and let loose.",
         category: "comedies",
@@ -340,7 +340,7 @@ export default new Vuex.Store({
       {
         name: "Open Mic Night",
         date: "2023-09-10",
-        location: "Bistriţa-Năsăud",
+        location: "Bistriţa",
         category: "comedies",
         price: 30,
         id: uuid(),
@@ -362,7 +362,7 @@ export default new Vuex.Store({
       {
         name: "Comedy Gala",
         date: "2023-09-15",
-        location: "Covasna",
+        location: " Sfântu Gheorghe",
         category: "comedies",
         description:
           "Looking for a fun night out? Look no further than our stand-up comedy event, guaranteed to leave you in stitches!",
@@ -373,7 +373,7 @@ export default new Vuex.Store({
       {
         name: "Improvisational Comedy Show",
         date: "2023-06-20",
-        location: "Bihor",
+        location: "Oradea",
         category: "comedies",
         description:
           "Join us for a night of side-splitting humor and good times at our stand-up show.",
@@ -395,7 +395,7 @@ export default new Vuex.Store({
       {
         name: "Comedy Gala",
         date: "2023-09-15",
-        location: "Maramureş",
+        location: "Baia Mare",
         category: "comedies",
         description:
           "Looking for a fun night out? Look no further than our stand-up comedy event, guaranteed to leave you in stitches!",
@@ -406,7 +406,7 @@ export default new Vuex.Store({
       {
         name: "Comedy Gala",
         date: "2023-09-15",
-        location: "Arges",
+        location: "Pitești",
         category: "comedies",
         description:
           "Laugh until your sides hurt with our hilarious stand-up show!",
@@ -417,7 +417,7 @@ export default new Vuex.Store({
       {
         name: "Improvisational Comedy Show",
         date: "2023-06-20",
-        location: "Arges",
+        location: "Pitești",
         category: "comedies",
         description:
           "Join us for a night of side-splitting humor and good times at our stand-up show.",
@@ -428,7 +428,7 @@ export default new Vuex.Store({
       {
         name: "Comedy Gala",
         date: "2023-09-15",
-        location: "Bistriţa-Năsăud",
+        location: "Bistriţa",
         category: "comedies",
         description:
           "Laugh until your sides hurt with our hilarious stand-up show!",
@@ -468,7 +468,7 @@ export default new Vuex.Store({
       },
       {
         name: "Puppet Theater",
-        location: "Cluj",
+        location: "Cluj-Napoca",
         date: "2023-07-15",
         id: uuid(),
         category: "kids",
@@ -478,7 +478,7 @@ export default new Vuex.Store({
       },
       {
         name: "Circus Show",
-        location: "Olt",
+        location: "Caracal",
         date: "2023-06-13",
         id: uuid(),
         category: "kids",
@@ -488,7 +488,7 @@ export default new Vuex.Store({
       },
       {
         name: "Puppet Theater",
-        location: "Neamţ",
+        location: "Piatra Neamț",
         date: "2023-07-15",
         id: uuid(),
         category: "kids",
@@ -518,7 +518,7 @@ export default new Vuex.Store({
       },
       {
         name: "Magic Workshop",
-        location: "Timiș",
+        location: "Timișoara",
         date: "2023-08-20",
         id: uuid(),
         category: "kids",
@@ -528,7 +528,7 @@ export default new Vuex.Store({
       },
       {
         name: "Magic Workshop",
-        location: "Bihor",
+        location: "Oradea",
         date: "2023-08-20",
         id: uuid(),
         category: "kids",
@@ -538,7 +538,7 @@ export default new Vuex.Store({
       },
       {
         name: "Magic Workshop",
-        location: "Prahova",
+        location: "Ploiești",
         date: "2023-08-20",
         id: uuid(),
         category: "kids",
@@ -548,7 +548,7 @@ export default new Vuex.Store({
       },
       {
         name: "Magic Workshop",
-        location: "Timiș",
+        location: "Timișoara",
         date: "2023-08-20",
         id: uuid(),
         category: "kids",
@@ -558,7 +558,7 @@ export default new Vuex.Store({
       },
       {
         name: "Magic Workshop",
-        location: "Alba",
+        location: "Alba-Iulia",
         date: "2023-08-20",
         id: uuid(),
         category: "kids",
@@ -578,7 +578,7 @@ export default new Vuex.Store({
       },
       {
         name: "Magic Workshop",
-        location: "Mehedinţi",
+        location: "Drobeta-Turnu Severin",
         date: "2023-08-20",
         id: uuid(),
         category: "kids",
@@ -588,7 +588,7 @@ export default new Vuex.Store({
       },
       {
         name: "Puppet Theater",
-        location: "Bihor",
+        location: "Oradea",
         date: "2023-07-15",
         id: uuid(),
         category: "kids",
@@ -619,7 +619,7 @@ export default new Vuex.Store({
       },
       {
         name: "Art & Crafts Fair",
-        location: "Bihor",
+        location: "Oradea",
         date: "2023-09-05",
         id: uuid(),
         category: "kids",
@@ -630,7 +630,7 @@ export default new Vuex.Store({
       },
       {
         name: "Art & Crafts Fair",
-        location: "Harghita",
+        location: "Miercurea Ciuc",
         date: "2023-09-05",
         id: uuid(),
         category: "kids",
@@ -641,7 +641,7 @@ export default new Vuex.Store({
       },
       {
         name: "Art & Crafts Fair",
-        location: "Gorj",
+        location: "Târgu Jiu",
         date: "2023-09-05",
         id: uuid(),
         category: "kids",
@@ -652,7 +652,7 @@ export default new Vuex.Store({
       },
       {
         name: "Art & Crafts Fair",
-        location: "Hunedoara",
+        location: "Deva",
         date: "2023-09-05",
         id: uuid(),
         category: "kids",
@@ -663,7 +663,7 @@ export default new Vuex.Store({
       },
       {
         name: "Magic Workshop",
-        location: "Alba",
+        location: "Alba-Iulia",
         date: "2023-08-20",
         id: uuid(),
         category: "kids",
@@ -694,7 +694,7 @@ export default new Vuex.Store({
       },
       {
         name: "Art & Crafts Fair",
-        location: "Prahova",
+        location: "Ploiești",
         date: "2023-09-05",
         id: uuid(),
         category: "kids",

@@ -17,7 +17,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <router-link to="/" class="nav-link active" aria-current="page"
+              <router-link
+                to="/"
+                class="nav-link active mx-1"
+                aria-current="page"
                 >Home
               </router-link>
             </li>
@@ -33,14 +36,14 @@
                   @click="showCities = false"
                   v-for="(city, index) in cities"
                   :key="index"
-                  class="city-name d-block px-3 pt-3 w-25"
+                  class="city-div d-block pt-3 w-25"
                 >
                   <router-link
                     :to="{
                       name: 'CityEvents',
                       params: { city: city },
                     }"
-                    class="text-decoration-none"
+                    class="text-decoration-none p-3"
                     >{{ city }}
                   </router-link>
                 </div>
@@ -108,52 +111,57 @@ export default {
       searchWord: "",
       showCities: false,
       showCartDetails: false,
-      cities: [
-        "Alba",
+    };
+  },
+  computed: {
+    cities() {
+      let cities = [
+        "Alba-Iulia",
         "Arad",
-        "Arges",
+        "Pitești",
         "Bacău",
-        "Bihor",
-        "Bistriţa-Năsăud",
+        "Oradea ",
+        "Bistriţa",
         "Botoșani",
         "Brăila",
         "Brașov",
         "Bucharest",
         "Buzău",
-        "Caraş-Severin",
+        "Caransebeș",
         "Călărași",
-        "Cluj",
+        "Cluj-Napoca",
         "Constanța",
-        "Covasna",
-        "Dâmboviţa",
-        "Dolj",
+        "Sfântu Gheorghe",
+        "Târgoviște",
+        "Craiova",
         "Galaţi",
         "Giurgiu",
-        "Gorj",
-        "Harghita",
-        "Hunedoara",
+        "Târgu Jiu",
+        "Miercurea Ciuc",
+        "Deva ",
         "Iași",
-        "Ialomiţa",
+        "Slobozia",
         "Ilfov",
-        "Maramureş",
-        "Mehedinţi",
-        "Mureş",
-        "Neamţ",
-        "Olt",
-        "Prahova",
+        "Baia Mare",
+        "Drobeta-Turnu Severin",
+        "Târgu Mureș",
+        "Piatra Neamț",
+        "Caracal",
+        "Ploiești",
         "Satu Mare",
-        "Sălaj",
+        "Zalău",
         "Sibiu",
         "Suceava",
         "Suceava",
-        "Teleorman",
-        "Timiş",
+        "Alexandria ",
+        "Timișoara",
         "Tulcea",
+        "Râmnicu Vâlcea",
         "Vaslui",
-        "Vâlcea",
-        "Vrancea",
-      ],
-    };
+        "Focșani",
+      ];
+      return cities.sort();
+    },
   },
   methods: {
     filterEvents() {
@@ -193,12 +201,11 @@ export default {
   z-index: 1;
 }
 
-.city-name {
+.city-div {
   text-align: start;
-  cursor: pointer;
 }
 
-.city-name:hover {
+.city-div:hover {
   background-color: #cccccc;
 }
 
