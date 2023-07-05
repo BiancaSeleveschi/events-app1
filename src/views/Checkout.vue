@@ -131,7 +131,12 @@ export default {
         this.isEmailInvalid = true;
         this.messageEmailAlert = "Enter a valid email address";
       } else if (this.email.includes("@")) {
-        this.$router.push("/card");
+        this.$router.push({
+          name: "CardDetails",
+          params: {
+            email: this.email,
+          },
+        });
       }
     },
   },

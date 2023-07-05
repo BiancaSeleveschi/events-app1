@@ -722,6 +722,13 @@ export default new Vuex.Store({
       });
       EventBus.$emit("filtered-events", filteredEvents);
     },
+    getCartItemCount: (state) => {
+      let total = 0;
+      state.cart.forEach((item) => {
+        total += item.quantity;
+      });
+      return total;
+    },
   },
   mutations: {
     ADD_TO_CART(state, item) {
@@ -739,6 +746,9 @@ export default new Vuex.Store({
     REMOVE_FROM_CART(state, index) {
       state.cart.splice(index, 1);
     },
+    RESET_CART(state) {
+      state.cart = [];
+    },
   },
   actions: {
     addToCart(context, item) {
@@ -746,6 +756,9 @@ export default new Vuex.Store({
     },
     removeEventFromCart(context, index) {
       context.commit("REMOVE_FROM_CART", index);
+    },
+    resetCart(context) {
+      context.commit("RESET_CART");
     },
   },
   modules: {},

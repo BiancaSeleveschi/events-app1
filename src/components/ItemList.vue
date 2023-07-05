@@ -89,7 +89,7 @@ export default {
   height: fit-content;
   width: 100%;
   padding-top: 100px;
-  padding-bottom: 35%;
+  padding-bottom: 600px;
   margin-bottom: -35%;
 }
 

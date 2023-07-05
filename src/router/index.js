@@ -10,6 +10,7 @@ import Search from "@/views/Search";
 import CardDetails from "@/views/CardDetails";
 import Checkout from "@/views/Checkout";
 import CityEvents from "@/views/CityEvents";
+import OrderConfirmation from "@/views/OrderConfirmation";
 
 Vue.use(VueRouter);
 
@@ -48,6 +49,11 @@ const routes = [
     path: "/checkout",
     name: "Checkout",
     component: Checkout,
+  },
+  {
+    path: "/order/confirmation",
+    name: "OrderConfirmation",
+    component: OrderConfirmation,
   },
   {
     path: "/card",

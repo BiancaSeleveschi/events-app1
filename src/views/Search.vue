@@ -1,5 +1,5 @@
 <template>
-  <div class="ff">
+  <div>
     <ItemList :events="filteredEvents" category="Search results" />
   </div>
 </template>

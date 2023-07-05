@@ -1,7 +1,6 @@
 <template>
   <div>
     <div
-      v-if="!isOrderSuccessfulPlaced"
       class="m-auto my-5 border border-2 bg-secondary bg-opacity-25 m-auto p-4 rounded rounded-4 payment-page"
     >
       <h4 class="p-4">Enter your card details</h4>
@@ -88,18 +87,11 @@
         </p>
       </div>
       <button
-        @click="saveCardDetails"
+        @click="payNow"
         class="py-2 px-5 d-block m-auto mb-4 btn btn-dark"
       >
         Place Order
       </button>
-    </div>
-    <div v-else id="order-placed-div">
-      <h4 class="fw-bold">Your order has been placed successfully.</h4>
-      <h4 class="fw-bold">
-        You will receive the tickets in electronic format at the email address
-        provided.
-      </h4>
     </div>
   </div>
 </template>
@@ -116,12 +108,14 @@ export default {
       cvv: "",
       isCvvInputIncomplete: false,
       isExpirationMonthInputIncomplete: false,
-      isOrderSuccessfulPlaced: false,
       isExpirationYearInputIncomplete: false,
       isCardNumberInputIncomplete: false,
       isCardholderNameInputIncomplete: false,
       isCardDetailsComplete: false,
       showCvvDetails: false,
+      email: "",
+      emailMessage: "",
+      id: this.generateFictiveId(6),
     };
   },
   computed: {
@@ -141,7 +135,7 @@ export default {
     },
   },
   methods: {
-    saveCardDetails() {
+    payNow() {
       let card = {
         cardholderName: this.cardholderName,
         cardNumber: this.cardNumber,
@@ -172,7 +166,8 @@ export default {
         !this.isExpirationYearInputIncomplete &&
         !this.isCvvInputIncomplete;
       if (this.isCardDetailsComplete) {
-        this.isOrderSuccessfulPlaced = true;
+        this.$router.push("/order/confirmation");
+        this.$store.dispatch("resetCart");
       }
     },
   },
@@ -183,9 +178,11 @@ export default {
 #year-select {
   margin-left: -55px;
 }
+
 #cvv-pgf {
   cursor: pointer;
 }
+
 #cvv-inf-card {
   font-family: "Malgun Gothic Semilight", sans-serif;
   background-color: #ffffff;
@@ -214,10 +211,6 @@ export default {
   border-style: solid;
   transform: rotate(90deg);
   z-index: -6;
-}
-
-#order-placed-div {
-  margin-top: 250px;
 }
 
 .payment-page {
