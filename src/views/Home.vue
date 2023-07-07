@@ -30,10 +30,12 @@
 
 <script>
 import { EventBus } from "@/store";
+import ItemList from "@/components/ItemList";
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Home",
+  components: { ItemList },
   data() {
     return {
       events: this.$store.state.events,

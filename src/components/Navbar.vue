@@ -69,16 +69,17 @@
             </li>
           </ul>
 
-          <form class="d-flex" role="search">
+          <div class="d-flex" role="search">
             <input
               v-model="searchWord"
+              v-on:keyup.enter="searchEvent"
               @input="searchEvent"
               class="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-          </form>
+          </div>
           <router-link to="/checkout" class="cart rounded-5 mx-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +167,13 @@ export default {
   },
   methods: {
     searchEvent() {
-      this.$router.push("/search");
+      console.log("this.searchWord");
+      console.log(this.searchWord);
+
+      this.$router.push({
+        path: "/search",
+        query: { title: this.searchWord },
+      });
       EventBus.$emit("search-query", this.searchWord);
     },
   },
