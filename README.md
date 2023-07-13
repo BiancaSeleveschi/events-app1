@@ -1,15 +1,25 @@
-# events-app1
-The events app I worked on focuses on simplifying the discovery and attendance of various events. Users can effortlessly search for events based on their interests and location, ensuring they find relevant and exciting experiences.
+# EventsApp
+The events app is designed to enhance your event-going experience. Users can easily search for events based on their interests and location. They can select the event they are interested in attending and securely purchase tickets with just a few clicks.
 
-The app provides a user-friendly interface with detailed event listings, including essential information like dates, venues, and descriptions. This allows users to make informed decisions when selecting events to attend.
+## Features
+- view all events
+- view events by category
+- view events by location
+- wiew an event details
+- search event
+- add event to cart
+- delete event from cart
+- view cart and proceded to checkout
+- make a payment
+- place an order
 
-One of the app's standout features is its seamless ticket-purchasing system. Users can easily select the events they wish to attend and securely purchase tickets directly within the app. This streamlined process eliminates the need for external ticketing platforms and ensures a smooth and convenient experience for users.
 
-To develop this app, I utilized Vue.js as the framework, along with Bootstrap for responsive and intuitive design. Vuex was used for state management, enabling efficient data handling and providing a seamless user experience.
+## Built with
+<p align="left"> <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40"/> </a>  <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a>  <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a></a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> </p>
 
-By combining the power of Vue.js, Bootstrap, and Vuex, the app delivers a visually appealing, user-friendly interface that simplifies event discovery and ticket purchasing. 
-
-Demo: https://eventgo-app.netlify.app/
+### Demo
+ https://eventgo-app.netlify.app/
+ 
 ## Project setup
 ```
 npm install
