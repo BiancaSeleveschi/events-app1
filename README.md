@@ -5,11 +5,11 @@ The events app is designed to enhance your event-going experience. Users can eas
 - view all events
 - view events by category
 - view events by location
-- wiew an event details
+- view an event details
 - search event
 - add event to cart
 - delete event from cart
-- view cart and proceded to checkout
+- view cart and proceeded to checkout
 - make a payment
 - place an order
 
@@ -20,6 +20,11 @@ The events app is designed to enhance your event-going experience. Users can eas
 ### Demo
  https://eventgo-app.netlify.app/
  
+### UI
+<img src="src/assets/events-app.jpg" width="200">
+<img src="src/assets/event-img.jpg" width="200">
+<img src="src/assets/events-location.jpg" width="200">
+
 ## Project setup
 ```
 npm install
