@@ -27,9 +27,9 @@ https://eventgo-app.netlify.app/
  
 ### UI
 
-<img src="src/assets/events-app.jpg" width="350">
-<img src="src/assets/event-img.jpg" width="350">
-<img src="src/assets/events-location.jpg" width="350">
+<img src="src/assets/events-app.jpg" width="350" class="d-inline-block">
+<img src="src/assets/event-img.jpg" width="350" class="d-inline-block">
+<img src="src/assets/events-location.jpg" width="350" class="d-inline-block">
 
 ## Project setup
 
