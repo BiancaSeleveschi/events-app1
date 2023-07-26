@@ -1,9 +1,9 @@
 <template>
   <div class="mt-5">
-    <div v-if="event" class="event">
-      <div class="mt-5 pt-5 w-50 m-auto cart-item bg-secondary bg-opacity-25">
+    <div v-if="event" class="event m-auto">
+      <div class="cart-item bg-secondary bg-opacity-25">
         <img :src="event.img" class="img" />
-        <div class="ms-5">
+        <div class="ms-3 event-content">
           <h3 class="item-event-title text-black">{{ event.name }}</h3>
           <p class="pgf fw-bold mt-5">
             <svg
@@ -44,10 +44,10 @@
         </div>
       </div>
       <div
-        class="border border-secondary border-opacity-50 border border-5 w-50 m-auto mt-2"
+        class="buy-ticket-div border border-secondary border-opacity-50 border border-5 m-auto mt-2"
       >
-        <h4 class="fw-bold m-3">Buy tickets</h4>
-        <h5>Price: {{ event.price }} RON</h5>
+        <h4 class="fw-bold ticket-price m-3">Buy tickets</h4>
+        <h5 class="ticket-price">Price: {{ event.price }} RON</h5>
         <div class="button-div m-auto my-3">
           <button class="button-left d-inline" @click="decreaseQuantity">
             -
@@ -115,15 +115,13 @@ export default {
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  width: 50%;
   padding-bottom: 300px;
 }
 
 .img {
   display: flow;
-  width: 18em;
-  height: 20em;
+  width: 35%;
   object-fit: cover;
   object-position: top;
   transition: transform 0.6s;
@@ -131,8 +129,7 @@ export default {
 }
 
 .cart-item {
-  display: grid;
-  grid-template-columns: 3fr 6fr 1fr;
+  display: flex;
   padding: 20px;
   background-color: #ffffff;
 }
@@ -165,6 +162,10 @@ export default {
   font-size: 20px;
 }
 
+.buy-ticket-div {
+  width: 50%;
+}
+
 .button-right:hover,
 .button-left:hover {
   background-color: #5b5b5b;
@@ -172,5 +173,42 @@ export default {
 
 .pgf {
   text-align: left;
+}
+
+@media (max-width: 576px) {
+  .buy-ticket-div {
+    width: 90%;
+  }
+
+  .event {
+    width: 90%;
+  }
+
+  .btn,
+  .pgf,
+  .ticket-price {
+    font-size: 14px;
+  }
+
+  .quantity,
+  .button-left,
+  .button-right {
+    font-size: 16px;
+  }
+
+  .img {
+    width: 40%;
+    display: block;
+  }
+
+  .event-content {
+    width: 100%;
+    font-size: 14px;
+    display: block;
+  }
+
+  .item-event-title {
+    font-size: 18px;
+  }
 }
 </style>

@@ -1,21 +1,21 @@
 <template>
   <div class="events-section d-block bg-dark bg-opacity-75">
-    <h2 class="text-bg-primary w-50 m-auto p-4 text-uppercase title">
+    <h2 class="text-bg-primary m-auto p-4 text-uppercase title">
       {{ category }}
     </h2>
     <h4
       v-show="events.length === 0"
-      class="py-3 mt-5 px-3 w-50 m-auto text-black title"
+      class="py-3 mt-5 px-3 m-auto text-black title"
     >
       Sorry, we couldn't find any results for the entered search.
     </h4>
     <div
       v-for="(event, index) in events"
       :key="index"
-      class="cart-item w-50 m-auto bg-light"
+      class="cart-item m-auto bg-light"
     >
-      <img :src="event.img" />
-      <div>
+      <img :src="event.img" alt="Event image" class="event-image" />
+      <div class="event-content">
         <router-link
           :to="{
             name: 'ItemDetails',
@@ -49,7 +49,8 @@ export default {
 <style scoped>
 #get-button {
   float: right;
-  transform: translateY(400%);
+  margin-top: 90px;
+  margin-left: 40px;
 }
 
 .item-event-title {
@@ -75,6 +76,7 @@ export default {
 
 .title {
   letter-spacing: 3px;
+  width: 50%;
 }
 
 .item-header {
@@ -92,19 +94,21 @@ export default {
   padding-bottom: 600px;
   margin-bottom: -35%;
 }
-
+.event-content {
+  margin-left: 30px;
+}
 .cart-item {
   border-bottom: solid 1px #333;
   display: grid;
   grid-template-columns: 3fr 6fr 1fr;
   padding: 20px;
   background-color: #ffffff;
+  width: 50%;
 }
 
-img {
+.event-image {
   display: flow;
-  width: 18em;
-  height: 18em;
+  width: 100%;
   object-fit: cover;
   margin-right: 30px;
   object-position: top;
@@ -114,5 +118,32 @@ img {
 
 .cart-item:hover {
   background-color: #e3e3e3;
+}
+@media (max-width: 576px) {
+  .cart-item,
+  .title {
+    width: 90%;
+  }
+  .event-image {
+    width: 100%;
+    display: block;
+  }
+  .event-content {
+    width: 80%;
+    display: block;
+  }
+  .item-event-title {
+    font-size: 18px;
+  }
+  #get-button {
+    width: 100px;
+    float: left;
+    margin: 0px 20px 10px 0px;
+    display: block;
+    font-size: 14px;
+  }
+  .pgf {
+    font-size: 14px;
+  }
 }
 </style>

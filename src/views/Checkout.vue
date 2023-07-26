@@ -8,7 +8,7 @@
         class="border border-1 rounded-4 p-2 mb-2 bg-secondary bg-opacity-10"
       >
         <p @click="removeEventFromCart(index)" class="close me-1">x</p>
-        <h5 class="fw-bold mt-2">{{ item.event.name }}</h5>
+        <h5 class="fw-bold mt-2 festival-name">{{ item.event.name }}</h5>
         <p>{{ item.event.location }}, {{ item.event.date }}</p>
         <div class="w-100">
           <p class="d-inline">
@@ -186,5 +186,27 @@ export default {
 
 .price {
   float: right;
+}
+@media (max-width: 576px) {
+  .card {
+    width: 90%;
+    margin-left: 5%;
+    font-size: 14px;
+  }
+
+  .email-card {
+    width: 90%;
+    margin-right: 1%;
+    margin-top: 0%;
+  }
+  .festival-name,
+  .price,
+  .border-bottom {
+    font-size: 16px;
+  }
+  .btn,
+  #couponCode {
+    font-size: 14px;
+  }
 }
 </style>
